@@ -1,5 +1,7 @@
 module {
-  version = "1.0.0"
+  name        = "git-ref"
+  provider    = "shell"
+  version     = "1.0.0"
   description = "Read the name and SHA of a git ref"
 
   scripts {
