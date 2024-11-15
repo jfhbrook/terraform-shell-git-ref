@@ -4,13 +4,13 @@ set -euo pipefail
 
 RESPONSE="$( \
   echo '{"branch":null,"sha":null}' \
-  | jq --arg path "${path}" \
-  | jq --arg refspec "${refspec}" \
+  | jq --arg path "$(pwd)" \
+        --arg refspec "${refspec}" \
         '.path = $path | .refspec = $refspec' \
 )"
 
 BRANCH="$(git rev-parse --abbrev-ref "${refspec}")"
-SHA="$(git rev-parse "${refspec})"
+SHA="$(git rev-parse "${refspec}")"
 
 echo "${RESPONSE}" | jq -cM \
   --arg branch "${BRANCH}" \
