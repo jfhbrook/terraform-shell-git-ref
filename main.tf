@@ -1,4 +1,4 @@
-data "shell_script" "git_head" {
+data "shell_script" "git_ref" {
   lifecycle_commands {
     read = file("${path.module}/lifecycle/read.sh")
   }
