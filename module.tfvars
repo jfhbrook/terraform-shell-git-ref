@@ -10,5 +10,5 @@ module = {
     format = ["terraform fmt -recursive"]
     lint   = ["tflint --recursive", "shellcheck ./lifecycle/*.sh"]
   }
-  version = "1.0.0"
+  version = "1.0.1"
 }
